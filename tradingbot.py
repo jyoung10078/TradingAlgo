@@ -24,7 +24,14 @@ class AlpacaCreds:
         self.Paper = paper
 
 
-ALPACA_CREDS = AlpacaCreds(api_key, api_secret, BASE_URL, True)
+# ALPACA_CREDS = AlpacaCreds(api_key, api_secret, BASE_URL, True)
+
+ALPACA_CREDS = {
+    "API_KEY": api_key,
+    "API_SECRET": api_secret,
+    "BASE_URL": BASE_URL,
+    "PAPER": True
+}
 
 class FirstStrategy(Strategy):
     def initialize(self, symbol:str="SPY"):
