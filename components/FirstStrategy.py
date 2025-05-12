@@ -33,5 +33,4 @@ class FirstStrategy(Strategy):
                 )
 
                 order_status = self.submit_order(order)
-                print(f"Order status: {order_status}")  # Debugging step
                 self.last_trade = "buy"
