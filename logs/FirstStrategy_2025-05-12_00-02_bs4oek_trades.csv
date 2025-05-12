@@ -1,0 +1,5 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2023-01-03 09:30:00-05:00,FirstStrategy,e1a2b860e08d4d02abbb600bd5331f19,SPY,buy,market,new,1,gtc,0.0,1,stock,,,
+2023-01-03 09:30:00-05:00,FirstStrategy,e1a2b860e08d4d02abbb600bd5331f19,SPY,buy,market,fill,1,gtc,0.0,1,stock,384.3699951171875,130.0,0.0
+2023-12-11 09:30:00-05:00,FirstStrategy,19e96dd45cfd4cb69d0e92827a02eddf,SPY,sell_to_close,stop,canceled,1,day,0.0,1,stock,,,
+2023-12-11 09:30:00-05:00,FirstStrategy,bacc284a5c294a9e81b4820e9243a50c,SPY,sell_to_close,limit,fill,1,day,0.0,1,stock,461.243994140625,130.0,0.0

@@ -24,7 +24,7 @@ class FirstStrategy(Strategy):
         order = None
 
         if last_price < cash:
-            if self.last_trade is None:
+            if self.last_trade == None:
                 order = self.create_order(
                     self.symbol,
                     quantity,
@@ -34,6 +34,5 @@ class FirstStrategy(Strategy):
                     stop_loss_price=last_price * 0.95,
                 )
 
-        if order:
-            self.submit_order(order)
-            self.last_trade = "buy"
+                this = self.submit_order(order)
+                self.last_trade = "buy"
