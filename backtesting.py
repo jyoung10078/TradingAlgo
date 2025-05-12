@@ -8,7 +8,7 @@ from components.MLTrader import MLTrader
 from components.api_creds import ALPACA_CREDS
 
 
-start_date = datetime(2020, 1, 1)
+start_date = datetime(2024, 1, 1)
 end_date = datetime(2024, 12, 31)
 
 broker = Alpaca(ALPACA_CREDS)
@@ -40,5 +40,5 @@ strategy2.backtest(
     , backtesting_start=start_date
     , backtesting_end=end_date
     , parameters={"symbol": "SPY"
-                  , "cash_at_risk": 0.5}
+                  , "cash_at_risk": 0.25}
 )

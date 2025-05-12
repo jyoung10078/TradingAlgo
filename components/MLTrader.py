@@ -20,7 +20,7 @@ class MLTrader(Strategy):
 
 
     def position_sizing(self):
-        cash = self.get_cash()
+        cash = self.get_portfolio_value()
         last_price = self.get_last_price(self.symbol)
         quantity = round((cash * self.cash_at_risk) / last_price, 0)
         return cash, last_price, quantity
