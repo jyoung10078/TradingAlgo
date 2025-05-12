@@ -14,19 +14,19 @@ end_date = datetime(2024, 12, 31)
 broker = Alpaca(ALPACA_CREDS)
 
 # Strategy Testing 1
-strategy = FirstStrategy(name='first_strategy'
-                      , broker=broker
-                      , parameters={"symbol": "SPY"
-                                    , "cash_at_risk": 0.5}
-                      )
+# strategy = FirstStrategy(name='first_strategy'
+#                       , broker=broker
+#                       , parameters={"symbol": "SPY"
+#                                     , "cash_at_risk": 0.5}
+#                       )
 
-strategy.backtest(
-    YahooDataBacktesting
-    , backtesting_start=start_date
-    , backtesting_end=end_date
-    , parameters={"symbol": "SPY"
-                  , "cash_at_risk": 0.5}
-)
+# strategy.backtest(
+#     YahooDataBacktesting
+#     , backtesting_start=start_date
+#     , backtesting_end=end_date
+#     , parameters={"symbol": "SPY"
+#                   , "cash_at_risk": 0.5}
+# )
 
 # Strategy Testing 2
 strategy2 = MLTrader(name='ml_trader_strategy'
