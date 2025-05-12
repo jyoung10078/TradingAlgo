@@ -4,6 +4,7 @@ from alpaca_trade_api import REST
 from timedelta import Timedelta
 from datetime import datetime
 from components.api_creds import ALPACA_CREDS
+from components.finbert_utils import estimate_sentiment
 
 class MLTrader(Strategy):
     """ Class for a simple strategy that buys a stock and holds it. """
@@ -30,23 +31,24 @@ class MLTrader(Strategy):
         return today.strftime("%Y-%m-%d"), three_days_prior.strftime("%Y-%m-%d")
     
 
-    def get_news(self):
+    def get_sentiment(self):
         end_date, start_date = self.get_dates()
         news = self.api.get_news(symbol=self.symbol, start=start_date, end=end_date)
 
         news = [ev.__dict__ ["_raw"]["headline"] for ev in news]
-        return news
+
+        probability, sentiment = estimate_sentiment(news)
+        return probability, sentiment
 
 
     def on_trading_iteration(self):
         cash, last_price, quantity = self.position_sizing()
-
-        order = None
+        probability, sentiment = self.get_sentiment()
 
         if last_price < cash:
-            if self.last_trade == None:
-                news = self.get_news()
-                print(f"News for {self.symbol}: {news}")
+            if sentiment == "positive" and probability > 0.9:
+                if self.last_trade == "sell":
+                    self.sell_all()
                 order = self.create_order(
                     self.symbol,
                     quantity,
@@ -56,3 +58,16 @@ class MLTrader(Strategy):
 
                 order_status = self.submit_order(order)
                 self.last_trade = "buy"
+
+            elif sentiment == "negative" and probability > 0.9:
+                if self.last_trade == "buy":
+                    self.sell_all()
+                order = self.create_order(
+                    self.symbol,
+                    quantity,
+                    "sell",
+                    type="market"
+                )
+
+                order_status = self.submit_order(order)
+                self.last_trade = "sell"
