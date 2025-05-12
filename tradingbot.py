@@ -52,7 +52,7 @@ class FirstStrategy(Strategy):
             self.last_trade = "buy"
 
 start_date = datetime(2023, 1, 1)
-end_date = datetime(2023, 10, 1)
+end_date = datetime(2023, 12, 31)
 
 broker = Alpaca(ALPACA_CREDS)
 strategy = FirstStrategy(name='first_strategy'
@@ -61,8 +61,8 @@ strategy = FirstStrategy(name='first_strategy'
 
 strategy.backtest(
     YahooDataBacktesting
-    , start_date=start_date
-    , end_date=end_date
+    , backtesting_start=start_date
+    , backtesting_end=end_date
     , parameters={"symbol": "SPY"}
 )
 
