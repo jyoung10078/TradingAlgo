@@ -29,10 +29,9 @@ class FirstStrategy(Strategy):
                     self.symbol,
                     quantity,
                     "buy",
-                    type="bracket",
-                    take_profit_price=last_price * 1.20,
-                    stop_loss_price=last_price * 0.95,
+                    type="market"
                 )
 
-                this = self.submit_order(order)
+                order_status = self.submit_order(order)
+                print(f"Order status: {order_status}")  # Debugging step
                 self.last_trade = "buy"
