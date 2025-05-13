@@ -1,4 +1,3 @@
-# ADDING THIS FILE FROM NICHOLAS RENOTTE'S REPO ON ML TRADING
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch

@@ -5,10 +5,11 @@ from lumibot.traders import Trader
 from datetime import datetime
 from components.FirstStrategy import FirstStrategy
 from components.MLTrader import MLTrader
+from components.IndicatorTrader import IndicatorTrader
 from components.api_creds import ALPACA_CREDS
 
 
-start_date = datetime(2024, 1, 1)
+start_date = datetime(2024, 12, 1)
 end_date = datetime(2024, 12, 31)
 
 broker = Alpaca(ALPACA_CREDS)
@@ -29,13 +30,29 @@ broker = Alpaca(ALPACA_CREDS)
 # )
 
 # Strategy Testing 2
-strategy2 = MLTrader(name='ml_trader_strategy'
+# strategy2 = MLTrader(name='ml_trader_strategy'
+#                       , broker=broker
+#                       , parameters={"symbol": "SPY"
+#                                     , "cash_at_risk": 0.25}
+#                       )
+
+# strategy2.backtest(
+#     YahooDataBacktesting
+#     , backtesting_start=start_date
+#     , backtesting_end=end_date
+#     , parameters={"symbol": "SPY"
+#                   , "cash_at_risk": 0.25}
+# )
+
+
+# Strategy Testing 3
+strategy3 = IndicatorTrader(name='indicator_trader_strategy'
                       , broker=broker
                       , parameters={"symbol": "SPY"
-                                    , "cash_at_risk": 0.5}
+                                    , "cash_at_risk": 0.25}
                       )
 
-strategy2.backtest(
+strategy3.backtest(
     YahooDataBacktesting
     , backtesting_start=start_date
     , backtesting_end=end_date
