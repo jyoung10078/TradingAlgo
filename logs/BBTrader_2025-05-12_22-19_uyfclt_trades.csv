@@ -1,0 +1,11 @@
+time,strategy,identifier,symbol,side,type,status,multiplier,time_in_force,asset.strike,asset.multiplier,asset.asset_type,price,filled_quantity,trade_cost
+2024-07-26 10:30:00-04:00,BBTrader,d078a95508094fa7aa19171740408570,SPY,buy,market,new,1,gtc,0.0,1,stock,,,
+2024-07-26 10:30:00-04:00,BBTrader,d078a95508094fa7aa19171740408570,SPY,buy,market,fill,1,gtc,0.0,1,stock,542.280029296875,46.0,0.0
+2024-10-15 10:30:00-04:00,BBTrader,0ed25a0d29714c83828ad7a653a0f23d,SPY,sell,market,new,1,day,0.0,1,stock,,,
+2024-10-15 10:30:00-04:00,BBTrader,36691b28a20a441ba4114bab8dba48a8,SPY,sell,market,new,1,gtc,0.0,1,stock,,,
+2024-10-15 10:30:00-04:00,BBTrader,0ed25a0d29714c83828ad7a653a0f23d,SPY,sell,market,fill,1,day,0.0,1,stock,584.5900268554688,46.0,0.0
+2024-10-15 10:30:00-04:00,BBTrader,36691b28a20a441ba4114bab8dba48a8,SPY,sell,market,fill,1,gtc,0.0,1,stock,584.5900268554688,44.0,0.0
+2024-11-01 10:30:00-04:00,BBTrader,4f3547af0c854f78afff7251648d33e7,SPY,buy,market,new,1,day,0.0,1,stock,,,
+2024-11-01 10:30:00-04:00,BBTrader,c469ce88af044d28ad4a2f026b690f9a,SPY,buy,market,new,1,gtc,0.0,1,stock,,,
+2024-11-01 10:30:00-04:00,BBTrader,4f3547af0c854f78afff7251648d33e7,SPY,buy,market,fill,1,day,0.0,1,stock,571.3200073242188,44.0,0.0
+2024-11-01 10:30:00-04:00,BBTrader,c469ce88af044d28ad4a2f026b690f9a,SPY,buy,market,fill,1,gtc,0.0,1,stock,571.3200073242188,45.0,0.0

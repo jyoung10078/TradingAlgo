@@ -4,12 +4,12 @@ from lumibot.backtesting import YahooDataBacktesting
 from lumibot.traders import Trader
 from datetime import datetime
 from components.FirstStrategy import FirstStrategy
-from components.BBTrader import MLTrader
+from components.MLTrader import MLTrader
 from components.BBTrader import BBTrader
 from components.api_creds import ALPACA_CREDS
 
 
-start_date = datetime(2024, 12, 1)
+start_date = datetime(2024, 1, 1)
 end_date = datetime(2024, 12, 31)
 
 broker = Alpaca(ALPACA_CREDS)
