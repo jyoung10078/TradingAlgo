@@ -72,7 +72,7 @@ class BBTrader(Strategy):
 
         if last_price < cash:
             if BB_buy_signal == 'buy':
-                if self.last_trade == "sell":
+                if self.last_trade == "buy":
                     self.sell_all()
                 order = self.create_order(
                     self.symbol,
@@ -87,12 +87,5 @@ class BBTrader(Strategy):
             elif BB_buy_signal == 'sell':
                 if self.last_trade == "buy":
                     self.sell_all()
-                order = self.create_order(
-                    self.symbol,
-                    quantity,
-                    "sell",
-                    type="market"
-                )
 
-                self.submit_order(order)
                 self.last_trade = "sell"

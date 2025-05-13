@@ -49,7 +49,7 @@ broker = Alpaca(ALPACA_CREDS)
 strategy3 = BBTrader(name='indicator_trader_strategy'
                       , broker=broker
                       , parameters={"symbol": "SPY"
-                                    , "cash_at_risk": 0.25}
+                                    , "cash_at_risk": 0.5}
                       )
 
 strategy3.backtest(
@@ -57,5 +57,5 @@ strategy3.backtest(
     , backtesting_start=start_date
     , backtesting_end=end_date
     , parameters={"symbol": "SPY"
-                  , "cash_at_risk": 0.25}
+                  , "cash_at_risk": 0.5}
 )
