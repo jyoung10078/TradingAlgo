@@ -48,14 +48,14 @@ broker = Alpaca(ALPACA_CREDS)
 # Strategy Testing 3
 strategy3 = BBTrader(name='indicator_trader_strategy'
                       , broker=broker
-                      , parameters={"symbol": "SPY"
-                                    , "cash_at_risk": 0.5}
+                      , parameters={"symbol": "IVR"
+                                    , "cash_at_risk": 1}
                       )
 
 strategy3.backtest(
     YahooDataBacktesting
     , backtesting_start=start_date
     , backtesting_end=end_date
-    , parameters={"symbol": "SPY"
-                  , "cash_at_risk": 0.5}
+    , parameters={"symbol": "IVR"
+                  , "cash_at_risk": 1}
 )
