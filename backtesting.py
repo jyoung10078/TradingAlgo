@@ -4,8 +4,8 @@ from lumibot.backtesting import YahooDataBacktesting
 from lumibot.traders import Trader
 from datetime import datetime
 from components.FirstStrategy import FirstStrategy
-from components.MLTrader import MLTrader
-from components.IndicatorTrader import IndicatorTrader
+from components.BBTrader import MLTrader
+from components.BBTrader import BBTrader
 from components.api_creds import ALPACA_CREDS
 
 
@@ -46,7 +46,7 @@ broker = Alpaca(ALPACA_CREDS)
 
 
 # Strategy Testing 3
-strategy3 = IndicatorTrader(name='indicator_trader_strategy'
+strategy3 = BBTrader(name='indicator_trader_strategy'
                       , broker=broker
                       , parameters={"symbol": "SPY"
                                     , "cash_at_risk": 0.25}

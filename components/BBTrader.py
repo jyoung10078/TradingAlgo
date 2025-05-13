@@ -6,7 +6,7 @@ from datetime import datetime
 from components.api_creds import ALPACA_CREDS
 from components.finbert_utils import estimate_sentiment
 
-class MLTrader(Strategy):
+class BBTrader(Strategy):
     """ Class for a simple strategy that buys a stock and holds it. """
 
     def initialize(self, symbol:str="SPY", cash_at_risk:float=0.5):
