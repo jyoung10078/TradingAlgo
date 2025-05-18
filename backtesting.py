@@ -6,6 +6,7 @@ from datetime import datetime
 from components.FirstStrategy import FirstStrategy
 from components.MLTrader import MLTrader
 from components.BBTrader import BBTrader
+from components.MomentumRiskTrader import MomentumRiskTrader
 from components.api_creds import ALPACA_CREDS
 
 
@@ -46,16 +47,30 @@ broker = Alpaca(ALPACA_CREDS)
 
 
 # Strategy Testing 3
-strategy3 = BBTrader(name='indicator_trader_strategy'
-                      , broker=broker
-                      , parameters={"symbol": "IVR"
-                                    , "cash_at_risk": 1}
-                      )
+# strategy3 = BBTrader(name='indicator_trader_strategy'
+#                       , broker=broker
+#                       , parameters={"symbol": "IVR"
+#                                     , "cash_at_risk": 1}
+#                       )
 
-strategy3.backtest(
+# strategy3.backtest(
+#     YahooDataBacktesting
+#     , backtesting_start=start_date
+#     , backtesting_end=end_date
+#     , parameters={"symbol": "IVR"
+#                   , "cash_at_risk": 1}
+# )
+
+# Strategy Testing 4
+strategy4 = MomentumRiskTrader(name='momentum_risk_trader_strategy'
+                       , broker=broker
+                       , parameters={"symbol": "SPY"
+                                     , "cash_at_risk": 0.5}
+                       )
+strategy4.backtest(
     YahooDataBacktesting
     , backtesting_start=start_date
     , backtesting_end=end_date
-    , parameters={"symbol": "IVR"
-                  , "cash_at_risk": 1}
+    , parameters={"symbol": "SPY"
+                  , "cash_at_risk": 0.5}
 )
